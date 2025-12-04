@@ -1,13 +1,18 @@
-import beforeImg from "../assets/before.png"; // Sesuaikan path-nya
+import beforeImg from "../assets/before.png";
 import afterImg from "../assets/after.png";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, ArrowRight, Sparkles, X } from "lucide-react";
 import Button from "./Button";
 import Section from "./Section";
+import LeadModal from "./LeadModal"; // 1. IMPORT LEAD MODAL
 
 export default function Hero() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // 2. BUAT STATE UNTUK MODAL
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
+
   return (
     <Section className="pt-32 pb-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -37,16 +42,16 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="https://gemini.google.com/share/5c38c5132536"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* 3. TOMBOL HERO: Hapus tag <a> dan ganti dengan onClick */}
+            <Button
+              size="lg"
+              className="group"
+              onClick={() => setIsLeadModalOpen(true)} // Trigger Modal
             >
-              <Button size="lg" className="group">
-                Coba Gratis Sekarang
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
+              Mulai Tanpa Daftar
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+
             <Button size="lg" variant="outline" className="group">
               <Play className="w-5 h-5 mr-2" />
               Lihat Demo
@@ -87,14 +92,12 @@ export default function Hero() {
                   Before
                 </div>
                 <div className="relative aspect-square bg-slate-900 rounded-lg overflow-hidden border-2 border-slate-700">
-                  <div className="relative aspect-square bg-slate-900 rounded-lg overflow-hidden border-2 border-slate-700">
-                    <img
-                      src={beforeImg}
-                      alt="Before"
-                      className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                      onClick={() => setSelectedImage(beforeImg)}
-                    />
-                  </div>
+                  <img
+                    src={beforeImg}
+                    alt="Before"
+                    className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => setSelectedImage(beforeImg)}
+                  />
                 </div>
               </div>
 
@@ -125,7 +128,14 @@ export default function Hero() {
           <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-orange-600 to-red-500 rounded-full blur-3xl opacity-30" />
         </motion.div>
       </div>
-      {/* --- KODE MODAL LIGHTBOX --- */}
+
+      {/* 4. RENDER LEAD MODAL DI SINI (Di luar grid, tapi masih di dalam Section) */}
+      <LeadModal
+        isOpen={isLeadModalOpen}
+        onClose={() => setIsLeadModalOpen(false)}
+      />
+
+      {/* --- KODE MODAL LIGHTBOX GAMBAR (Tetap Ada) --- */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -133,9 +143,8 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
-            onClick={() => setSelectedImage(null)} // Tutup pas klik background
+            onClick={() => setSelectedImage(null)}
           >
-            {/* Tombol Close */}
             <button
               className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-slate-800/50 p-2 rounded-full"
               onClick={() => setSelectedImage(null)}
@@ -143,7 +152,6 @@ export default function Hero() {
               <X size={32} />
             </button>
 
-            {/* Gambar Full Screen */}
             <motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -151,12 +159,11 @@ export default function Hero() {
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               src={selectedImage}
               className="max-h-[90vh] max-w-full rounded-xl shadow-2xl border border-slate-700/50 object-contain"
-              onClick={(e) => e.stopPropagation()} // Biar klik gambar GAK menutup modal
+              onClick={(e) => e.stopPropagation()}
             />
           </motion.div>
         )}
       </AnimatePresence>
-      {/* --- END MODAL --- */}
     </Section>
   );
 }

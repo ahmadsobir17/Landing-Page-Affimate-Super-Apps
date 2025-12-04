@@ -1,59 +1,19 @@
 import { motion } from "framer-motion";
-import { Camera, FileText, User, Video } from "lucide-react";
+import { Camera, FileText, User, Video, Sparkles, Play } from "lucide-react";
 import Section from "./Section";
 
 export default function Features() {
-  const features = [
-    {
-      icon: Camera,
-      title: "AI Product Studio",
-      description:
-        "Ubah foto produk di lantai jadi foto studio mewah. Lighting, Background otomatis dalam hitungan detik.",
-      gradient: "from-orange-500 to-red-600",
-      size: "large",
-    },
-    {
-      icon: FileText,
-      title: "Magic Script Generator",
-      description:
-        "Bikin script TikTok/Reels viral dengan struktur Hook-Problem-Solution yang terbukti efektif.",
-      gradient: "from-red-500 to-pink-600",
-      size: "medium",
-    },
-    {
-      icon: User,
-      title: "Character Creator",
-      description:
-        "Buat model/avatar unik tanpa sewa model asli. Hemat biaya, hasil maksimal.",
-      gradient: "from-pink-500 to-purple-600",
-      size: "medium",
-    },
-    {
-      icon: Video,
-      title: "VEO Vision",
-      description:
-        "Generate prompt video cinematic untuk AI Video Generator. Konten berkualitas Hollywood.",
-      gradient: "from-purple-500 to-blue-600",
-      size: "large",
-    },
-  ];
-
   return (
-    <Section
-      id="fitur"
-      className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
-    >
-      <div className="text-center mb-16">
+    <Section id="fitur" className="bg-slate-950 py-20">
+      {/* Header Section */}
+      <div className="text-center mb-16 max-w-3xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-white mb-4"
+          className="text-4xl md:text-5xl font-bold text-white mb-6"
         >
-          Satu Aplikasi,{" "}
-          <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-            Empat Kekuatan AI
-          </span>
+          Lebih Dari Sekadar <span className="text-orange-500">Tools</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -62,46 +22,159 @@ export default function Features() {
           transition={{ delay: 0.1 }}
           className="text-xl text-slate-400"
         >
-          Semua yang kamu butuhkan untuk konten viral dalam satu platform
+          Kami gabungkan 4 mesin AI canggih dalam satu dashboard untuk
+          mempercepat workflow konten kreator.
         </motion.p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {features.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className={`relative group ${
-              feature.size === "large" ? "md:col-span-1" : "md:col-span-1"
-            }`}
-          >
-            <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-slate-600 transition-all duration-300 h-full">
-              <div
-                className={`bg-gradient-to-br ${feature.gradient} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-              >
-                <feature.icon className="w-8 h-8 text-white" />
+      {/* Bento Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
+        {/* CARD 1: Product Studio (Lebar) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="md:col-span-2 group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900"
+        >
+          {/* Background Image (Ganti src ini dengan hasil foto produk AI lo nanti) */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2224&auto=format&fit=crop"
+              alt="Product Studio"
+              className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+          </div>
+
+          {/* Content */}
+          <div className="absolute bottom-0 left-0 p-8 w-full">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-500/20 px-3 py-1 text-xs font-medium text-orange-400 backdrop-blur-md border border-orange-500/20">
+              <Camera className="w-3 h-3" /> Fitur Unggulan
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-2">
+              AI Product Studio
+            </h3>
+            <p className="text-slate-300 max-w-md">
+              Foto produk estetik tanpa studio mahal. Cukup upload foto polos,
+              AI akan buatkan background 3D realistis.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* CARD 2: Magic Script (Tinggi Normal) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 flex flex-col"
+        >
+          {/* Visual Element: Mockup Script */}
+          <div className="absolute inset-0 bg-slate-900 p-6 opacity-50 group-hover:opacity-30 transition-opacity">
+            <div className="space-y-3">
+              <div className="h-2 w-3/4 bg-slate-700 rounded-full" />
+              <div className="h-2 w-1/2 bg-slate-700 rounded-full" />
+              <div className="h-2 w-full bg-slate-700 rounded-full" />
+              <div className="h-2 w-5/6 bg-slate-700 rounded-full" />
+            </div>
+            <div className="mt-6 p-3 bg-slate-800 rounded-lg border border-slate-700">
+              <div className="flex items-center gap-2 mb-2">
+                <Sparkles className="w-3 h-3 text-green-400" />
+                <span className="text-[10px] text-green-400 font-mono">
+                  AI Generating...
+                </span>
               </div>
-
-              <h3 className="text-2xl font-bold text-white mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-slate-400 leading-relaxed text-lg">
-                {feature.description}
-              </p>
-
-              <div className="mt-6 inline-flex items-center text-sm font-semibold text-transparent bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text group-hover:translate-x-2 transition-transform duration-300">
-                {/* Pelajari Lebih Lanjut → */}
+              <div className="h-1.5 w-full bg-green-500/20 rounded-full overflow-hidden">
+                <div className="h-full w-2/3 bg-green-500 rounded-full animate-pulse" />
               </div>
             </div>
+          </div>
 
-            <div
-              className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 -z-10 blur-2xl`}
+          <div className="absolute bottom-0 left-0 p-6 z-10">
+            <div className="mb-3 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-red-500/20 text-red-400">
+              <FileText className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-1">Magic Script</h3>
+            <p className="text-sm text-slate-400">
+              Anti writer's block. Bikin script viral Hook-Story-Offer dalam 5
+              detik.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* CARD 3: Character Creator (Tinggi Normal) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900"
+        >
+          {/* Visual Element: Avatars */}
+          <div className="absolute top-6 right-6 flex -space-x-3">
+            {[1, 2, 3].map((i) => (
+              <img
+                key={i}
+                src={`https://i.pravatar.cc/150?img=${i + 25}`}
+                alt="Avatar"
+                className="w-10 h-10 rounded-full border-2 border-slate-900 shadow-lg"
+              />
+            ))}
+            <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-xs text-white">
+              +99
+            </div>
+          </div>
+
+          <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+          <div className="absolute bottom-0 left-0 p-6 z-10">
+            <div className="mb-3 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400">
+              <User className="w-5 h-5" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-1">Character AI</h3>
+            <p className="text-sm text-slate-400">
+              Butuh model bule atau lokal? Generate karakter unik tanpa sewa
+              talent.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* CARD 4: VEO Vision (Lebar) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="md:col-span-2 group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900"
+        >
+          {/* Background Video Placeholder */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop"
+              alt="Cinematic Video"
+              className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
             />
-          </motion.div>
-        ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+
+            {/* Play Button Overlay */}
+            <div className="absolute right-8 top-1/2 -translate-y-1/2 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all cursor-pointer">
+              <Play className="w-6 h-6 text-white fill-white ml-1" />
+            </div>
+          </div>
+
+          <div className="absolute inset-0 flex flex-col justify-center p-8 max-w-lg">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-500/20 px-3 py-1 text-xs font-medium text-blue-400 border border-blue-500/20">
+              <Video className="w-3 h-3" /> New Feature
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-2">
+              VEO Vision Prompts
+            </h3>
+            <p className="text-slate-300">
+              Ubah ide jadi prompt video cinematic siap pakai. Kompatibel dengan
+              tools seperti Runway, Pika, dan Sora.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </Section>
   );
