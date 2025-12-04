@@ -22,19 +22,18 @@ export default function Hero() {
               AI-Powered Content Creation
             </span>
           </div>
-
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Affiliator, Creator & Brand:
+            Ubah Foto HP Biasa Jadi
             <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
               {" "}
-              Foto Produk Profesional
+              Konten Profesional
             </span>{" "}
-            jadi Konten Video 30 Detik
+            yang Viral
           </h1>
 
           <p className="text-xl text-slate-400 mb-8 leading-relaxed">
-            Ubah foto produk biasa jadi hasil studio, render 3D, dan aset video
-            siap-publish tanpa editing. Tingkatkan kualitas & konversi cepat.
+            Cukup foto pake HP, transform jadi konten studio-quality. Makin
+            profesional, makin banyak engagement. Upload, edit, jadi viral.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -44,7 +43,7 @@ export default function Hero() {
               rel="noopener noreferrer"
             >
               <Button size="lg" className="group">
-                Mulai Tanpa Daftar
+                Coba Gratis Sekarang
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
