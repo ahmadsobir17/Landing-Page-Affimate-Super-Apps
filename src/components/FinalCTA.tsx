@@ -74,17 +74,6 @@ export default function FinalCTA() {
           <span>•</span>
           <span>Setup dalam 30 Detik</span>
         </div>
-
-        <div className="mt-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 inline-block">
-          <p className="text-slate-300 text-sm">
-            <span className="font-bold text-orange-500">Promo Special:</span>{" "}
-            Daftar hari ini dan dapatkan{" "}
-            <span className="font-bold text-white">
-              100 Generate Credits GRATIS
-            </span>{" "}
-            untuk paket Creator Pro!
-          </p>
-        </div>
       </motion.div>
     </Section>
   );
