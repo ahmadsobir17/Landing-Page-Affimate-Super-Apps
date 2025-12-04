@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Camera,
-  FileText,
-  User,
-  Video,
-  Sparkles,
-  Play,
-  Shirt,
-} from "lucide-react"; // Tambah icon Shirt
+import { FileText, User, Video, Sparkles, Play, Shirt } from "lucide-react";
 import Section from "./Section";
 
 export default function Features() {
@@ -37,35 +29,32 @@ export default function Features() {
 
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
-        {/* CARD 1: AI Fashion Studio (UPDATED FOCUS) */}
+        {/* CARD 1: AI Fashion Studio (Tetap Keren) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="md:col-span-2 group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900"
         >
-          {/* Background Image Fashion (Wanita Fashionable) */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop"
               alt="Fashion Model AI"
-              className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80" />
           </div>
 
-          {/* Content */}
-          <div className="absolute bottom-0 left-0 p-8 w-full">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-500/20 px-3 py-1 text-xs font-medium text-orange-400 backdrop-blur-md border border-orange-500/20">
+          <div className="absolute bottom-0 left-0 p-8 w-full z-10">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-3 py-1 text-xs font-medium text-white border border-white/20 shadow-lg">
               <Shirt className="w-3 h-3" /> Spesialis Fashion
             </div>
-            <h3 className="text-3xl font-bold text-white mb-2">
+            <h3 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">
               AI Fashion Studio
             </h3>
-            <p className="text-slate-300 max-w-lg">
-              Bikin katalog on-model tanpa sewa model & studio mahal. Cukup
-              upload foto baju/hijab flat lay, AI otomatis pasangkan ke model
-              realistis.
+            <p className="text-slate-200/90 max-w-lg text-sm md:text-base font-medium drop-shadow-md">
+              Bikin katalog on-model tanpa sewa model & studio mahal. Upload
+              flat-lay, AI pasangkan ke model realistis.
             </p>
           </div>
         </motion.div>
@@ -78,7 +67,6 @@ export default function Features() {
           transition={{ delay: 0.1 }}
           className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 flex flex-col"
         >
-          {/* Visual Element: Mockup Script */}
           <div className="absolute inset-0 bg-slate-900 p-6 opacity-50 group-hover:opacity-30 transition-opacity">
             <div className="space-y-3">
               <div className="h-2 w-3/4 bg-slate-700 rounded-full" />
@@ -111,7 +99,7 @@ export default function Features() {
           </div>
         </motion.div>
 
-        {/* CARD 3: Character Creator */}
+        {/* CARD 3: Character AI (INI YANG GUE UPDATE 🔥) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -119,31 +107,34 @@ export default function Features() {
           transition={{ delay: 0.2 }}
           className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900"
         >
-          {/* Visual Element: Avatars */}
-          <div className="absolute top-6 right-6 flex -space-x-3">
-            {[1, 2, 3].map((i) => (
-              <img
-                key={i}
-                src={`https://i.pravatar.cc/150?img=${i + 25}`}
-                alt="Avatar"
-                className="w-10 h-10 rounded-full border-2 border-slate-900 shadow-lg"
-              />
-            ))}
-            <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-xs text-white">
-              +99
+          {/* 1. Background Image Full (Wajah Model Portrait) */}
+          <div className="absolute inset-0 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
+              alt="Character AI Portrait"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            {/* Gradient Gelap di Bawah biar Teks Kebaca */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90" />
+          </div>
+
+          {/* 2. Badge "Unlimited Face" */}
+          <div className="absolute top-4 right-4">
+            <div className="inline-flex items-center gap-1 rounded-full bg-black/40 backdrop-blur-md px-2 py-1 text-[10px] font-medium text-white border border-white/10">
+              <Sparkles className="w-2 h-2 text-purple-400" /> Generated
             </div>
           </div>
 
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
           <div className="absolute bottom-0 left-0 p-6 z-10">
-            <div className="mb-3 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400">
+            <div className="mb-3 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/20 backdrop-blur-sm text-purple-400 border border-purple-500/20">
               <User className="w-5 h-5" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-1">Character AI</h3>
-            <p className="text-sm text-slate-400">
-              Butuh model bule atau lokal? Generate karakter unik tanpa sewa
-              talent.
+            <h3 className="text-xl font-bold text-white mb-1 drop-shadow-md">
+              Character AI
+            </h3>
+            <p className="text-sm text-slate-200/90 leading-tight drop-shadow-sm font-medium">
+              Sesuaikan wajah model dengan target pasarmu. Asia, Bule, atau
+              Lokal? Generate instan.
             </p>
           </div>
         </motion.div>
@@ -156,7 +147,6 @@ export default function Features() {
           transition={{ delay: 0.3 }}
           className="md:col-span-2 group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900"
         >
-          {/* Background Video Placeholder */}
           <div className="absolute inset-0">
             <img
               src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop"
@@ -165,7 +155,6 @@ export default function Features() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
 
-            {/* Play Button Overlay */}
             <div className="absolute right-8 top-1/2 -translate-y-1/2 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all cursor-pointer">
               <Play className="w-6 h-6 text-white fill-white ml-1" />
             </div>

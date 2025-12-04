@@ -91,11 +91,10 @@ export default function SocialProof() {
             animate={{ x: "-50%" }}
             transition={{
               ease: "linear",
-              duration: 40, // Kecepatan jalan (makin kecil makin ngebut)
+              duration: 40,
               repeat: Infinity,
             }}
           >
-            {/* Kita duplikasi array biar looping-nya mulus (Seamless Loop) */}
             {[...testimonials, ...testimonials].map((testi, i) => (
               <div
                 key={i}
@@ -135,13 +134,12 @@ export default function SocialProof() {
           </motion.div>
         </div>
 
-        {/* Gradient Mask kiri kanan biar fading halus */}
         <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-slate-950 to-transparent z-10" />
         <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-slate-950 to-transparent z-10" />
       </div>
 
-      {/* Stats Section */}
-      <div className="max-w-4xl mx-auto mt-20 grid grid-cols-3 gap-8 text-center border-t border-slate-800 pt-12">
+      {/* Stats Section - DIPERBAIKI UNTUK MOBILE */}
+      <div className="max-w-4xl mx-auto mt-20 grid grid-cols-3 gap-4 md:gap-8 text-center border-t border-slate-800 pt-12">
         {stats.map((stat, index) => (
           <motion.div
             key={index}
@@ -150,10 +148,12 @@ export default function SocialProof() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 + index * 0.1 }}
           >
-            <div className="text-3xl md:text-4xl font-bold text-white mb-1">
+            {/* Update: Ukuran Font Responsif */}
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
               {stat.value}
             </div>
-            <div className="text-slate-500 text-sm uppercase tracking-wider">
+            {/* Update: Ukuran Label lebih kecil di mobile */}
+            <div className="text-slate-500 text-[10px] md:text-sm uppercase tracking-wider font-medium">
               {stat.label}
             </div>
           </motion.div>
