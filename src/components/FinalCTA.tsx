@@ -1,9 +1,17 @@
-import { motion } from 'framer-motion';
-import { Rocket, ArrowRight } from 'lucide-react';
-import Button from './Button';
-import Section from './Section';
+import { motion } from "framer-motion";
+import { Rocket, ArrowRight } from "lucide-react";
+import Button from "./Button";
+import Section from "./Section";
 
 export default function FinalCTA() {
+  // Fungsi Scroll Halus ke Pricing
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById("harga");
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Section className="bg-slate-950 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-red-600/30 via-orange-500/20 to-red-600/30 opacity-50" />
@@ -21,19 +29,37 @@ export default function FinalCTA() {
         </div>
 
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          Jangan Sampai <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">Kompetitor</span> Mendahului Kamu
+          Jangan Sampai{" "}
+          <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+            Kompetitor
+          </span>{" "}
+          Mendahului Kamu
         </h2>
 
         <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-          Ribuan creator sudah menghasilkan konten viral dengan Affimate. Waktunya kamu bergabung dan tingkatkan omzet hingga 2x lipat!
+          Ribuan creator sudah menghasilkan konten viral dengan Affimate.
+          Waktunya kamu bergabung dan tingkatkan omzet hingga 2x lipat!
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <Button size="lg" className="group shadow-2xl shadow-red-500/50">
+          {/* 1. Update Tombol Utama dengan onClick Scroll */}
+          <Button
+            size="lg"
+            className="group shadow-2xl shadow-red-500/50"
+            onClick={scrollToPricing}
+          >
             Akses Affimate Sekarang
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button size="lg" variant="outline">
+
+          {/* 2. Update Tombol Demo (Opsional: Ke Youtube Demo) */}
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() =>
+              window.open("https://youtu.be/WyBDMX8V4VI", "_blank")
+            }
+          >
             Lihat Demo Dulu
           </Button>
         </div>
@@ -51,8 +77,12 @@ export default function FinalCTA() {
 
         <div className="mt-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 inline-block">
           <p className="text-slate-300 text-sm">
-            <span className="font-bold text-orange-500">Promo Special:</span> Daftar hari ini dan dapatkan{' '}
-            <span className="font-bold text-white">100 Generate Credits GRATIS</span> untuk paket Creator Pro!
+            <span className="font-bold text-orange-500">Promo Special:</span>{" "}
+            Daftar hari ini dan dapatkan{" "}
+            <span className="font-bold text-white">
+              100 Generate Credits GRATIS
+            </span>{" "}
+            untuk paket Creator Pro!
           </p>
         </div>
       </motion.div>

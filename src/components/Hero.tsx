@@ -52,7 +52,14 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
 
-            <Button size="lg" variant="outline" className="group">
+            <Button
+              size="lg"
+              variant="outline"
+              className="group"
+              onClick={() =>
+                window.open("https://youtu.be/WyBDMX8V4VI", "_blank")
+              }
+            >
               <Play className="w-5 h-5 mr-2" />
               Lihat Demo
             </Button>
