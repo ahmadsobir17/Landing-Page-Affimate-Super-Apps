@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { Camera, FileText, User, Video, Sparkles, Play } from "lucide-react";
+import {
+  Camera,
+  FileText,
+  User,
+  Video,
+  Sparkles,
+  Play,
+  Shirt,
+} from "lucide-react"; // Tambah icon Shirt
 import Section from "./Section";
 
 export default function Features() {
@@ -29,18 +37,18 @@ export default function Features() {
 
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
-        {/* CARD 1: Product Studio (Lebar) */}
+        {/* CARD 1: AI Fashion Studio (UPDATED FOCUS) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="md:col-span-2 group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900"
         >
-          {/* Background Image (Ganti src ini dengan hasil foto produk AI lo nanti) */}
+          {/* Background Image Fashion (Wanita Fashionable) */}
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2224&auto=format&fit=crop"
-              alt="Product Studio"
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop"
+              alt="Fashion Model AI"
               className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
@@ -49,19 +57,20 @@ export default function Features() {
           {/* Content */}
           <div className="absolute bottom-0 left-0 p-8 w-full">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-500/20 px-3 py-1 text-xs font-medium text-orange-400 backdrop-blur-md border border-orange-500/20">
-              <Camera className="w-3 h-3" /> Fitur Unggulan
+              <Shirt className="w-3 h-3" /> Spesialis Fashion
             </div>
             <h3 className="text-3xl font-bold text-white mb-2">
-              AI Product Studio
+              AI Fashion Studio
             </h3>
-            <p className="text-slate-300 max-w-md">
-              Foto produk estetik tanpa studio mahal. Cukup upload foto polos,
-              AI akan buatkan background 3D realistis.
+            <p className="text-slate-300 max-w-lg">
+              Bikin katalog on-model tanpa sewa model & studio mahal. Cukup
+              upload foto baju/hijab flat lay, AI otomatis pasangkan ke model
+              realistis.
             </p>
           </div>
         </motion.div>
 
-        {/* CARD 2: Magic Script (Tinggi Normal) */}
+        {/* CARD 2: Magic Script */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -102,7 +111,7 @@ export default function Features() {
           </div>
         </motion.div>
 
-        {/* CARD 3: Character Creator (Tinggi Normal) */}
+        {/* CARD 3: Character Creator */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -139,7 +148,7 @@ export default function Features() {
           </div>
         </motion.div>
 
-        {/* CARD 4: VEO Vision (Lebar) */}
+        {/* CARD 4: VEO Vision */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

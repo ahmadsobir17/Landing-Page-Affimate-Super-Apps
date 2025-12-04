@@ -23,6 +23,7 @@ function App() {
       <FAQ />
       <FinalCTA />
       <Footer />
+      <FomoPopup />
     </div>
   );
 }

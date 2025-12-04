@@ -36,12 +36,7 @@ const locations = [
   "Palembang",
 ];
 
-const products = [
-  "Lifetime Pro",
-  "Lifetime Pro",
-  "Lifetime Pro",
-  "Starter Plan",
-]; // Lebih banyak Lifetime biar mancing
+const products = ["Affimate Super Apps"]; // Lebih banyak Lifetime biar mancing
 
 export default function FomoPopup() {
   const [isVisible, setIsVisible] = useState(false);
