@@ -165,7 +165,8 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                 Mulai <span className="text-orange-500">Gratis</span> Sekarang
               </h3>
               <p className="mt-1 text-xs md:text-sm text-slate-400">
-                Dapatkan akses trial & tips konten viral ke WhatsAppmu.
+                Link akses akan dikirim via email & WhatsApp kamu. Pastikan data
+                benar agar kamu menerima linknya.
               </p>
             </div>
 
