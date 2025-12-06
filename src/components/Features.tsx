@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FileText, User, Video, Sparkles, Play, Shirt } from "lucide-react";
 import Section from "./Section";
+import afterImg from "../assets/after.png";
 
 export default function Features() {
   return (
@@ -38,8 +39,8 @@ export default function Features() {
         >
           <div className="absolute inset-0 overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop"
-              alt="Fashion Model AI"
+              src={afterImg}
+              alt="Hasil AI Fashion Studio"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80" />
